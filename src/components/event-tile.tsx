@@ -15,27 +15,27 @@ export const EventTile = ({
   imageUrl,
 }: EventTileProps) => {
   return (
-    <div className="tile-container">
-      <div className="tile-title-container">
-        <span className="tile-title">Spacestagram</span>
-        <span className="tile-subtitle">
+    <div className="event-tile__container">
+      <div className="event-tile__title-container">
+        <span className="event-tile__title">Spacestagram</span>
+        <span className="event-tile__subtitle">
           Brought to you by NASA's image API
         </span>
       </div>
-      <div className="tile-info">
+      <div className="event-tile__info">
         <img
-          className="tile-image"
+          className="event-tile__image"
           src="https://apod.nasa.gov/apod/image/2109/M16SHO_1024.jpg"
         ></img>
 
-        <div className="tile-description-title">
+        <div className="event-tile__event-title">
           <span>{title}</span>
-          <span className="tile-description-date">{date}</span>
+          <span className="event-tile__date">{date}</span>
         </div>
-        <span className="tile-description">{explaination}</span>
+        <span className="event-tile__description">{explaination}</span>
 
-        <div className="like-button-container">
-          <button className="like-button">Like!</button>
+        <div className="event-tile__like-container">
+          <button className="event-tile__like">Like!</button>
         </div>
       </div>
     </div>
