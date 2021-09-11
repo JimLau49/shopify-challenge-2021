@@ -32,7 +32,7 @@ export const EventTile = ({
           <span>{title}</span>
           <span className="event-tile__date">{date}</span>
         </div>
-        <span className="event-tile__description">{explaination}</span>
+        <span className="event-tile__description-text">{explaination}</span>
 
         <div className="event-tile__like-container">
           <button className="event-tile__like">Like!</button>
