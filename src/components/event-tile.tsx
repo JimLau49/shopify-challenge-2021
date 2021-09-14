@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./event-tile.scss";
 
-export interface EventTileProps {
-  title: String;
-  date: String;
-  explaination: String;
-  imageUrl: String;
+export interface IEventTileProps {
+  title: string;
+  date: string;
+  explaination: string;
+  imageUrl: string;
 }
 
 export const EventTile = ({
@@ -13,7 +13,7 @@ export const EventTile = ({
   date,
   explaination,
   imageUrl,
-}: EventTileProps) => {
+}: IEventTileProps) => {
   return (
     <div className="event-tile__container">
       <div className="event-tile__title-container">
@@ -23,10 +23,7 @@ export const EventTile = ({
         </span>
       </div>
       <div className="event-tile__info">
-        <img
-          className="event-tile__image"
-          src="https://apod.nasa.gov/apod/image/2109/M16SHO_1024.jpg"
-        ></img>
+        <img className="event-tile__image" src={imageUrl}></img>
 
         <div className="event-tile__event-title">
           <span>{title}</span>
