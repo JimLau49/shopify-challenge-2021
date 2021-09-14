@@ -10,7 +10,7 @@ export const App = () => {
   const [data, setData] = useState<any[]>([]);
 
   useEffect(() => {
-    toast("Loading!", {
+    toast("Collecting Images from Satellite...", {
       position: "top-left",
       autoClose: 5000,
       hideProgressBar: true,
