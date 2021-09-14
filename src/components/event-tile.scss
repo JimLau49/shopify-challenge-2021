@@ -1,5 +1,6 @@
 .event-tile {
   &__container {
+    text-align: center;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -73,7 +74,7 @@
   }
 
   &__date {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   &__description-text {

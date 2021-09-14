@@ -1,7 +1,7 @@
-import React, { useState } from "react";
 import "./event-tile.scss";
 
 export interface IEventTileProps {
+  key: string;
   title: string;
   date: string;
   explaination: string;
@@ -23,7 +23,7 @@ export const EventTile = ({
         </span>
       </div>
       <div className="event-tile__info">
-        <img className="event-tile__image" src={imageUrl}></img>
+        <img className="event-tile__image" src={imageUrl} alt=""></img>
 
         <div className="event-tile__event-title">
           <span>{title}</span>
