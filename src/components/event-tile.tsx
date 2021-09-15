@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./event-tile.scss";
+import LikeButton from "./like-button";
 
 export interface IEventTileProps {
   key: string;
@@ -17,9 +18,11 @@ export const EventTile = ({
   imageUrl,
   mediaType,
 }: IEventTileProps) => {
-  const [liked, setLicked] = useState(false);
+  const [liked, setLiked] = useState(false);
+
   const handleClick = () => {
-    setLicked(!liked);
+    setLiked(!liked);
+    console.log("clicked");
   };
 
   return (
@@ -57,29 +60,7 @@ export const EventTile = ({
         </div>
         <p className="event-tile__description-text">{explaination}</p>
         <div className="event-tile__like-container">
-          {liked ? (
-            <button
-              className="event-tile__liked"
-              onClick={handleClick}
-              role="button"
-              aria-pressed="true"
-            >
-              <span role="img" aria-label="sparkling heart">
-                💖
-              </span>
-            </button>
-          ) : (
-            <button
-              className="event-tile__like"
-              onClick={handleClick}
-              role="button"
-              aria-pressed="false"
-            >
-              <span role="img" aria-label="heart">
-                ❤️
-              </span>
-            </button>
-          )}
+          <LikeButton liked={liked} onClick={handleClick} />
         </div>
       </div>
     </div>

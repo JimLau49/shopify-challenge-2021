@@ -97,57 +97,6 @@
     margin-left: 5px;
     margin-bottom: 10px;
   }
-
-  &__like {
-    width: 75px;
-    height: 35px;
-    font-family: "Roboto", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: #000;
-    background-color: #fff;
-    border: none;
-    border-radius: 45px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease 0s;
-    cursor: pointer;
-    outline: none;
-
-    // &:hover {
-    //   background-color: rgb(11, 61, 145);
-    //   box-shadow: 0px 15px 20px rgba(252, 61, 33);
-    //   color: #fff;
-    // }
-
-    &:active {
-      transform: translateY(-7px);
-      background-color: rgb(11, 61, 145);
-      box-shadow: 0px 15px 20px rgba(252, 61, 33);
-    }
-  }
-  &__liked {
-    width: 75px;
-    height: 35px;
-    font-family: "Roboto", sans-serif;
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: 500;
-    color: #fff;
-    background-color: rgb(11, 61, 145);
-    box-shadow: 0px 15px 20px rgba(252, 61, 33);
-    border: none;
-    border-radius: 45px;
-    transition: all 0.3s ease 0s;
-    cursor: pointer;
-    outline: none;
-
-    &:active {
-      background-color: rgb(11, 61, 145);
-      box-shadow: 0px 15px 20px rgba(252, 61, 33);
-      color: #fff;
-      transform: translateY(-7px);
-    }
-  }
 }
 
 .video-responsive {
