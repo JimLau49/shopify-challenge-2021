@@ -12,7 +12,7 @@ export const App = () => {
   useEffect(() => {
     toast("Collecting Images from Satellite...", {
       position: "top-right",
-      autoClose: 5000,
+      autoClose: 10000,
       hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: true,
@@ -32,20 +32,24 @@ export const App = () => {
       });
   }, []);
 
-  const eventTiles = data.map((object, index) => (
-    <EventTile
-      key={`eventTile-${index}`}
-      title={object.title}
-      date={object.date}
-      explaination={object.explanation}
-      imageUrl={object.url}
-      mediaType={object.media_type}
-    />
-  ));
+  const eventTiles = data
+    .map((object, index) => (
+      <EventTile
+        key={`eventTile-${index}`}
+        title={object.title}
+        date={object.date}
+        explaination={object.explanation}
+        imageUrl={object.url}
+        mediaType={object.media_type}
+      />
+    ))
+    .reverse();
 
   return (
     <div className="App">
-      {eventTiles && eventTiles.length > 0 ? eventTiles : <ToastContainer />}
+      <div className="event-tile-list">
+        {eventTiles && eventTiles.length > 0 ? eventTiles : <ToastContainer />}
+      </div>
     </div>
   );
 };

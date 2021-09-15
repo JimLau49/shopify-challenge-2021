@@ -1,3 +1,7 @@
 .App {
   background-color: #d3d3d3;
 }
+
+#root > div > div > div:nth-child(n + 2) > div.event-tile__title-container > * {
+  display: none;
+}
