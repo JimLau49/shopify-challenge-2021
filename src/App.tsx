@@ -11,7 +11,7 @@ export const App = () => {
 
   useEffect(() => {
     toast("Collecting Images from Satellite...", {
-      position: "top-left",
+      position: "top-right",
       autoClose: 5000,
       hideProgressBar: true,
       closeOnClick: true,
@@ -20,7 +20,7 @@ export const App = () => {
   });
 
   useEffect(() => {
-    const start_date = moment().subtract(30, "days").format("YYYY-MM-D");
+    const start_date = moment().subtract(5, "days").format("YYYY-MM-D");
     axios
       .get(
         `https://api.nasa.gov/planetary/apod?api_key=zUeHUtgPEYyhRZBf8fCa6w5htRYrZwoWlqFXPZV6&start_date=${start_date}`
@@ -32,7 +32,7 @@ export const App = () => {
       });
   }, []);
 
-  var eventTiles = data.map((object, index) => (
+  const eventTiles = data.map((object, index) => (
     <EventTile
       key={`eventTile-${index}`}
       title={object.title}

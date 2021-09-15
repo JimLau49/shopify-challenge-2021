@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./event-tile.scss";
 
 export interface IEventTileProps {
@@ -14,12 +15,18 @@ export const EventTile = ({
   explaination,
   imageUrl,
 }: IEventTileProps) => {
+  const [liked, setLicked] = useState(false);
+
+  const handleClick = () => {
+    console.log("hi");
+    setLicked(!liked);
+  };
   return (
     <div className="event-tile__container">
       <div className="event-tile__title-container">
         <span className="event-tile__title">Spacestagram</span>
         <span className="event-tile__subtitle">
-          Brought to you by NASA's image API
+          Brought to you by NASA&apos;s image API
         </span>
       </div>
       <div className="event-tile__info">
@@ -29,10 +36,21 @@ export const EventTile = ({
           <span>{title}</span>
           <span className="event-tile__date">{date}</span>
         </div>
-        <span className="event-tile__description-text">{explaination}</span>
-
+        <p className="event-tile__description-text">{explaination}</p>
         <div className="event-tile__like-container">
-          <button className="event-tile__like">Like!</button>
+          {liked ? (
+            <button className="event-tile__liked" onClick={handleClick}>
+              <span role="img" aria-label="sparkling heart">
+                💖
+              </span>
+            </button>
+          ) : (
+            <button className="event-tile__like" onClick={handleClick}>
+              <span role="img" aria-label="heart">
+                ❤️
+              </span>
+            </button>
+          )}
         </div>
       </div>
     </div>
