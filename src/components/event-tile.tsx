@@ -7,6 +7,7 @@ export interface IEventTileProps {
   date: string;
   explaination: string;
   imageUrl: string;
+  mediaType: "image" | "video";
 }
 
 export const EventTile = ({
@@ -14,13 +15,13 @@ export const EventTile = ({
   date,
   explaination,
   imageUrl,
+  mediaType,
 }: IEventTileProps) => {
   const [liked, setLicked] = useState(false);
-
   const handleClick = () => {
-    console.log("hi");
     setLicked(!liked);
   };
+
   return (
     <div className="event-tile__container">
       <div className="event-tile__title-container">
@@ -30,7 +31,19 @@ export const EventTile = ({
         </span>
       </div>
       <div className="event-tile__info">
-        <img className="event-tile__image" src={imageUrl} alt=""></img>
+        {mediaType === "video" ? (
+          <iframe
+            width="100%"
+            height="480"
+            src={imageUrl}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            title="Embedded youtube"
+          />
+        ) : (
+          <img className="event-tile__image" src={imageUrl} alt=""></img>
+        )}
 
         <div className="event-tile__event-title">
           <span>{title}</span>

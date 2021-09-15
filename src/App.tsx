@@ -20,7 +20,7 @@ export const App = () => {
   });
 
   useEffect(() => {
-    const start_date = moment().subtract(5, "days").format("YYYY-MM-D");
+    const start_date = moment().subtract(30, "days").format("YYYY-MM-D");
     axios
       .get(
         `https://api.nasa.gov/planetary/apod?api_key=zUeHUtgPEYyhRZBf8fCa6w5htRYrZwoWlqFXPZV6&start_date=${start_date}`
@@ -38,7 +38,8 @@ export const App = () => {
       title={object.title}
       date={object.date}
       explaination={object.explanation}
-      imageUrl={object.hdurl}
+      imageUrl={object.url}
+      mediaType={object.media_type}
     />
   ));
 
