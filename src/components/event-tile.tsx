@@ -39,10 +39,16 @@ export const EventTile = ({
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-            title="Embedded youtube"
+            title="Apod Video"
+            aria-label="Embeded Youtube Video Player"
           />
         ) : (
-          <img className="event-tile__image" src={imageUrl} alt=""></img>
+          <img
+            className="event-tile__image"
+            src={imageUrl}
+            alt="NASA Astronomy Picture of the Day"
+            role="img"
+          ></img>
         )}
 
         <div className="event-tile__event-title">
@@ -52,13 +58,23 @@ export const EventTile = ({
         <p className="event-tile__description-text">{explaination}</p>
         <div className="event-tile__like-container">
           {liked ? (
-            <button className="event-tile__liked" onClick={handleClick}>
+            <button
+              className="event-tile__liked"
+              onClick={handleClick}
+              role="button"
+              aria-pressed="true"
+            >
               <span role="img" aria-label="sparkling heart">
                 💖
               </span>
             </button>
           ) : (
-            <button className="event-tile__like" onClick={handleClick}>
+            <button
+              className="event-tile__like"
+              onClick={handleClick}
+              role="button"
+              aria-pressed="false"
+            >
               <span role="img" aria-label="heart">
                 ❤️
               </span>
