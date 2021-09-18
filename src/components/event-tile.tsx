@@ -48,8 +48,7 @@ export const EventTile = ({
           <img
             className="event-tile__image"
             src={imageUrl}
-            alt="NASA Astronomy Picture of the Day"
-            role="img"
+            alt="NASA Apod"
           ></img>
         )}
 

@@ -26,9 +26,7 @@ export const App = () => {
         `https://api.nasa.gov/planetary/apod?api_key=zUeHUtgPEYyhRZBf8fCa6w5htRYrZwoWlqFXPZV6&start_date=${start_date}`
       )
       .then((res) => {
-        if ((res.status = 200)) {
-          setData(res.data) as unknown as IEventTileProps;
-        }
+        setData(res.data) as unknown as IEventTileProps;
       });
   }, []);
 
