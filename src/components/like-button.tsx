@@ -12,7 +12,7 @@ export const LikeButton = ({ liked, onClick = () => ({}) }: ILikeButton) => {
       {liked ? (
         <button className="liked" aria-pressed="true" onClick={onClick}>
           <span role="img" aria-label="sparkling heart">
-            💖
+            🚀
           </span>
         </button>
       ) : (
