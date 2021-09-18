@@ -22,7 +22,6 @@ export const EventTile = ({
 
   const handleClick = () => {
     setLiked(!liked);
-    console.log("clicked");
   };
 
   return (

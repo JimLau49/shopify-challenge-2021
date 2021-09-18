@@ -1,5 +1,5 @@
 .App {
-  background-color: #d3d3d3;
+  background-color: #cfcfcf;
 }
 
 #root > div > div > div:nth-child(n + 2) > div.event-tile__title-container > * {
