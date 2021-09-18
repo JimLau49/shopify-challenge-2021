@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./event-tile.scss";
 import LikeButton from "./like-button";
+import DatePicker from "react-datepicker";
 
 export interface IEventTileProps {
   key: string;
@@ -26,12 +27,12 @@ export const EventTile = ({
 
   return (
     <div className="event-tile__container">
-      <div className="event-tile__title-container">
+      {/* <div className="event-tile__title-container">
         <span className="event-tile__title">Spacestagram</span>
         <span className="event-tile__subtitle">
           Brought to you by NASA&apos;s image API
         </span>
-      </div>
+      </div> */}
       <div className="event-tile__info">
         {mediaType === "video" ? (
           <iframe

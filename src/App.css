@@ -1,7 +1,30 @@
-.App {
+@import "react-datepicker/dist/react-datepicker.css";
+body {
+  height: 100%;
   background-color: #cfcfcf;
 }
 
-#root > div > div > div:nth-child(n + 2) > div.event-tile__title-container > * {
-  display: none;
+.header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+
+.react-datepicker-wrapper {
+  width: auto;
+  padding-top: 15px;
+  border: none;
+}
+.react-datepicker__input-container input {
+  height: 30px;
+  border-radius: 2%;
+  border: none;
+  text-align: center;
+  outline: none;
+}
+
+.react-datepicker__input-container {
+  border-radius: 1%;
 }
