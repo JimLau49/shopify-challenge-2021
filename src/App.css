@@ -1,7 +1,0 @@
-.App {
-  background-color: #cfcfcf;
-}
-
-#root > div > div > div:nth-child(n + 2) > div.event-tile__title-container > * {
-  display: none;
-}
