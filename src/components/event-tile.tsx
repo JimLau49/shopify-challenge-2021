@@ -27,12 +27,6 @@ export const EventTile = ({
 
   return (
     <div className="event-tile__container">
-      {/* <div className="event-tile__title-container">
-        <span className="event-tile__title">Spacestagram</span>
-        <span className="event-tile__subtitle">
-          Brought to you by NASA&apos;s image API
-        </span>
-      </div> */}
       <div className="event-tile__info">
         {mediaType === "video" ? (
           <iframe

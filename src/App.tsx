@@ -3,15 +3,22 @@ import "./components/event-tile";
 import { EventTile, IEventTileProps } from "./components/event-tile";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import moment from "moment";
+
 import axios from "axios";
 import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import LoadingSpinner from "./components/loading-spinner";
+
 export const App = () => {
   const [data, setData] = useState<any[]>([]);
+  const [loading, setLoading] = useState(false);
 
-  const [startDate, setStartDate] = useState<Date>(new Date());
+  const today = new Date();
+  const fiveDaysAgo = new Date(today);
+  fiveDaysAgo.setDate(fiveDaysAgo.getDate() - 5);
+
+  const [startDate, setStartDate] = useState<Date>(fiveDaysAgo);
 
   useEffect(() => {
     toast("Collecting Images from Satellite...", {
@@ -24,11 +31,13 @@ export const App = () => {
   });
 
   useEffect(() => {
-    getApodData(new Date());
+    getApodData(fiveDaysAgo);
   }, []);
 
   const getApodData = (date: Date) => {
     const startDate = getFormattedDate(date);
+    setLoading(true);
+
     axios
       .get(
         `https://api.nasa.gov/planetary/apod?api_key=zUeHUtgPEYyhRZBf8fCa6w5htRYrZwoWlqFXPZV6&start_date=${startDate}`
@@ -36,6 +45,7 @@ export const App = () => {
       .then((res) => {
         setData(res.data) as unknown as IEventTileProps;
         setStartDate(date);
+        setLoading(false);
       });
   };
 
@@ -71,7 +81,6 @@ export const App = () => {
         <span className="event-tile__subtitle">
           Brought to you by NASA&apos;s image API
         </span>
-
         <DatePicker
           selected={startDate}
           onChange={getApodData}
@@ -81,7 +90,7 @@ export const App = () => {
         />
       </div>
       <div className="event-tile-list">
-        {eventTiles && eventTiles.length > 0 ? eventTiles : <ToastContainer />}
+        {loading ? <LoadingSpinner {...loading} /> : eventTiles}
       </div>
     </div>
   );

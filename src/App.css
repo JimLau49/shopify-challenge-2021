@@ -12,6 +12,11 @@ body {
   height: 150px;
 }
 
+@media (max-width: 900px) {
+  .header-container {
+    height: 150px;
+  }
+}
 .react-datepicker-wrapper {
   width: auto;
   padding-top: 15px;
