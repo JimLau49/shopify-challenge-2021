@@ -1,10 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import EventTile from "./event-tile";
-// @ts-ignore
-import {
-  getByTestId,
-  toHaveStyle,
-} from "@testing-library/jest-dom/extend-expect";
+
 const mockProps = {
   key: "1",
   title: "Test title",
