@@ -1,7 +1,6 @@
 import "./App.css";
 import "./components/event-tile";
 import { EventTile, IEventTileProps } from "./components/event-tile";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import axios from "axios";
@@ -19,16 +18,6 @@ export const App = () => {
   fiveDaysAgo.setDate(fiveDaysAgo.getDate() - 5);
 
   const [startDate, setStartDate] = useState<Date>(fiveDaysAgo);
-
-  useEffect(() => {
-    toast("Collecting Images from Satellite...", {
-      position: "top-right",
-      autoClose: 10000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-    });
-  });
 
   useEffect(() => {
     getApodData(fiveDaysAgo);
@@ -50,7 +39,7 @@ export const App = () => {
   };
 
   const getFormattedDate = (date: Date) => {
-    let year = date.getFullYear();
+    const year = date.getFullYear();
 
     let month = (1 + date.getMonth()).toString();
     month = month.length > 1 ? month : "0" + month;
