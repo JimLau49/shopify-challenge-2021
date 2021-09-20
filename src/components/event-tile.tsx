@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./event-tile.scss";
 import LikeButton from "./like-button";
-import DatePicker from "react-datepicker";
 
 export interface IEventTileProps {
   key: string;

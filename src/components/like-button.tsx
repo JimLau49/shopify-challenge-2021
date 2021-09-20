@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./like-button.scss";
 
 export interface ILikeButton {

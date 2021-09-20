@@ -9,8 +9,18 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import LoadingSpinner from "./components/loading-spinner";
 
+export interface INasaApod {
+  date: string;
+  explanation: string;
+  hdurl?: string;
+  media_type: "image" | "video";
+  service_version: string;
+  title: string;
+  url: string;
+}
+
 export const App = () => {
-  const [data, setData] = useState<any[]>([]);
+  const [data, setData] = useState<INasaApod[]>([]);
   const [loading, setLoading] = useState(false);
 
   const today = new Date();
