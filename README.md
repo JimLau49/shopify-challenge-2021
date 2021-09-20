@@ -1,5 +1,8 @@
 ﻿# shopify-challenge-2021
 
+![image](https://user-images.githubusercontent.com/35787279/134055327-9264f3b6-f121-4a28-b5b2-ae5c85dc15c8.png)
+
+
 ## Quick Start Guide
 
 To run this react-native application and start development:
