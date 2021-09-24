@@ -1,5 +1,6 @@
 ﻿# shopify-challenge-2021
 
+Check out the site [here](https://jimlau49.github.io/shopify-challenge-2021/)
 ![image](https://user-images.githubusercontent.com/35787279/134055327-9264f3b6-f121-4a28-b5b2-ae5c85dc15c8.png)
 
 
